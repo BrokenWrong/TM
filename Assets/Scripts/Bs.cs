@@ -31,7 +31,6 @@ public class Bs : MonoBehaviour
 
     public GameObject EnemyImg2;
 
-
     void Start()
     {
         r2D.velocity = vec2;
