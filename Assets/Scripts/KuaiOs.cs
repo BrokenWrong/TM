@@ -127,6 +127,35 @@ public class KuaiOs : MonoBehaviour
             ToMove((int[][])listArr[touchI]);
         }
     }
+    public void UpClick()
+    {
+        if (IsTouch != 0) return;
+        touchI = 0;
+        IsTouch = 1;
+        ToMove((int[][])listArr[touchI]);
+    }
+    public void DownClick()
+    {
+        if (IsTouch != 0) return;
+        touchI = 1;
+        IsTouch = 1;
+        ToMove((int[][])listArr[touchI]);
+    }
+    public void LeftClick()
+    {
+        if (IsTouch != 0) return;
+        touchI = 2;
+        IsTouch = 1;
+        ToMove((int[][])listArr[touchI]);
+    }
+    public void RightClick()
+    {
+        if (IsTouch != 0) return;
+        touchI = 3;
+        IsTouch = 1;
+        ToMove((int[][])listArr[touchI]);
+    }
+
     private void Ss()
     {
         for (int i = 0; i < isHave.Length; i++)
