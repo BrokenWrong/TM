@@ -25,34 +25,35 @@ public class KuaiOs : MonoBehaviour
 
     };
 
-    int[][] upArr = new int[][]
+    private int[][] upArr = new int[][]
     {
         new int[]{ 0, 4, 8, 12 },
         new int[]{ 1, 5, 9, 13 },
         new int[]{ 2, 6, 10, 14 },
         new int[]{ 3, 7, 11, 15 }
     };
-    int[][] downArr = new int[][]
+    private int[][] downArr = new int[][]
     {
         new int[]{ 12, 8, 4, 0 },
         new int[]{ 13, 9, 5, 1 },
         new int[]{ 14, 10, 6, 2 },
         new int[]{ 15, 11, 7, 3 }
     };
-    int[][] leftArr = new int[][]
+    private int[][] leftArr = new int[][]
     {
         new int[]{ 0, 1, 2, 3 },
         new int[]{ 4, 5, 6, 7 },
         new int[]{ 8, 9, 10, 11 },
         new int[]{ 12, 13, 14, 15 }
     };
-    int[][] rightArr = new int[][]
+    private int[][] rightArr = new int[][]
     {
         new int[]{ 3, 2, 1, 0 },
         new int[]{ 7, 6, 5, 4 },
         new int[]{ 11, 10, 9, 8 },
         new int[]{ 15, 14, 13, 12 }
     };
+    private ArrayList listArr;
 
 
     public GameObject KuaiImg;
@@ -60,7 +61,9 @@ public class KuaiOs : MonoBehaviour
     public Image[] BgImgs;
 
     private KuaiImgs[] kuaiImgsA;
-    public bool IsTouch { get; set; }
+    public int IsTouch { get; set; }
+
+    private int touchI = -1;
 
     void Awake()
     {
@@ -72,16 +75,22 @@ public class KuaiOs : MonoBehaviour
             false, false, false, false
         };
         kuaiImgsA = new KuaiImgs[16];
-        IsTouch = true;
+        listArr = new ArrayList();
+        listArr.Add(upArr);
+        listArr.Add(downArr);
+        listArr.Add(leftArr);
+        listArr.Add(rightArr);
+
+        IsTouch = 0;
     }
 
     void Start()
     {
-        //Begin();
-        LoadKuai(4);
-        LoadKuai(7);
-        LoadKuai(10);
-        LoadKuai(12);
+        Begin();
+        //LoadKuai(0);
+        //LoadKuai(4);
+        //LoadKuai(8);
+        //LoadKuai(12);
         //Ss();
     }
 
@@ -92,22 +101,30 @@ public class KuaiOs : MonoBehaviour
 
     private void InputKey()
     {
-        if (!IsTouch) return;
+        if (IsTouch != 0) return;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
-            OnUp();
+            touchI = 0;
+            IsTouch = 1;
+            ToMove((int[][])listArr[touchI]);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
-            OnDwon();
+            touchI = 1;
+            IsTouch = 1;
+            ToMove((int[][])listArr[touchI]);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
-            OnLeft();
+            touchI = 2;
+            IsTouch = 1;
+            ToMove((int[][])listArr[touchI]);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
-            OnRight();
+            touchI = 3;
+            IsTouch = 1;
+            ToMove((int[][])listArr[touchI]);
         }
     }
     private void Ss()
@@ -118,26 +135,9 @@ public class KuaiOs : MonoBehaviour
                 Debug.Log(i.ToString() + " : " + isHave[i]);
         }
     }
-    private void OnUp()
-    {
-        ToMove(upArr);
-    }
-    private void OnDwon()
-    {
-        ToMove(downArr);
-    }
-    private void OnLeft()
-    {
-        ToMove(leftArr);
-    }
-    private void OnRight()
-    {
-        ToMove(rightArr);
-    }
 
     private void ToMove(int[][] iArr)
     {
-        IsTouch = false;
         ArrayList list = new ArrayList();
         for (int i = 0; i < iArr.Length; i++)
         {
@@ -146,7 +146,7 @@ public class KuaiOs : MonoBehaviour
             {
                 if (isHave[iArr[i][j]])
                 {
-                    if(!isHave[iArr[i][index]])
+                    if(!isHave[iArr[i][index]] && j != index)
                     {
                         list.Add(iArr[i][j].ToString() + ";" + iArr[i][index].ToString());
                         isHave[iArr[i][j]] = false;
@@ -158,24 +158,91 @@ public class KuaiOs : MonoBehaviour
         }
         if (list.Count == 0)
         {
-            AddKuai();
-            IsTouch = true;
+            if(IsTouch == 1)
+            {
+                KuaiToAdd();
+                return;
+            }
+            KuaiToEnd();
             return;
         }
-        KuaiMove(list, kuaiImgsA);
+        KuaiMove(list);
     }
 
-    private void KuaiMove(ArrayList list, KuaiImgs[] kuai)
+    private void ToAdd(int[][] iArr)
+    {
+        ArrayList list = new ArrayList();
+        for (int i = 0; i < iArr.Length; i++)
+        {
+            int index = 0;
+            if(!isHave[iArr[i][index]])
+            {
+                continue;
+            }
+            for (int j = 1; j < iArr[i].Length; j++)
+            {
+                if(isHave[iArr[i][j]])
+                {
+                    if(isHave[iArr[i][index]])
+                    {
+                        if(kuaiImgsA[iArr[i][j]].GetNum() == kuaiImgsA[iArr[i][index]].GetNum())
+                        {
+                            list.Add(iArr[i][j].ToString() + ";" + iArr[i][index].ToString());
+                            isHave[iArr[i][j]] = false;
+                            isHave[iArr[i][index]] = true;
+                            index++;
+                            j++;
+                        }
+                        index++;
+                    }
+                }
+            }
+        }
+        if (list.Count == 0)
+        {
+            KuaiToEnd();
+            return;
+        }
+        KuaiAdd(list);
+    }
+
+    public void KuaiToAdd()
+    {
+        IsTouch = 2;
+        ToAdd((int[][])listArr[touchI]);
+    }
+    public void KuaiToMove()
+    {
+        IsTouch = 3;
+        ToMove((int[][])listArr[touchI]);
+    }
+    public void KuaiToEnd()
+    {
+        AddKuai();
+        IsTouch = 0;
+    }
+
+    private void KuaiMove(ArrayList list)
     {
         for (int i = 0; i < list.Count; i++)
         {
             string[] arr = list[i].ToString().Split(';');
             int i1 = int.Parse(arr[0]);
             int i2 = int.Parse(arr[1]);
-            kuaiImgsA[i1].Move(BgImgs[i2].transform, i == list.Count - 1, i1);
+            kuaiImgsA[i1].Move(BgImgs[i2].transform, i == list.Count - 1, i1, false);
             kuaiImgsA[i2] = kuaiImgsA[i1];
         }
-        AddKuai();
+    }
+    private void KuaiAdd(ArrayList list)
+    {
+        for (int i = 0; i < list.Count; i++)
+        {
+            string[] arr = list[i].ToString().Split(';');
+            int i1 = int.Parse(arr[0]);
+            int i2 = int.Parse(arr[1]);
+            kuaiImgsA[i1].Add(BgImgs[i2].transform, i == list.Count - 1, i1, kuaiImgsA[i2].transform, true);
+            kuaiImgsA[i2] = kuaiImgsA[i1];
+        }
     }
 
     private void Begin()

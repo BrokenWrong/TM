@@ -21,12 +21,14 @@ public class KuaiImgs : MonoBehaviour
     public int num = 2;
 
     private KuaiOs kuaiOs;
+    private Transform kuaiImgs;
 
     private Transform target;
     private bool isMove = false;
     private float speed = 0.05f;
     private float distance;
     private bool isTouch = false;
+    private bool isDelete = false;
 
     public void OnKuai(int index, Transform tf)
     {
@@ -41,11 +43,23 @@ public class KuaiImgs : MonoBehaviour
         NumText.text = num.ToString();
     }
 
-    public void Move(Transform tf, bool bl, int i)
+    public void Move(Transform tf, bool bl, int i, bool de)
     {
         id = i;
         isTouch = bl;
         target = tf;
+        isDelete = de;
+        distance = Vector2.Distance(transform.localPosition, target.localPosition);
+        isMove = true;
+    }
+
+    public void Add(Transform tf, bool bl, int i, Transform k, bool de)
+    {
+        id = i;
+        isTouch = bl;
+        target = tf;
+        kuaiImgs = k;
+        isDelete = de;
         distance = Vector2.Distance(transform.localPosition, target.localPosition);
         isMove = true;
     }
@@ -61,9 +75,27 @@ public class KuaiImgs : MonoBehaviour
         if (transform.localPosition == target.localPosition)
         {
             isMove = false;
-            if (isTouch)
+            if(kuaiOs.IsTouch == 2 && isDelete)
             {
-                kuaiOs.IsTouch = true;
+                Destroy(kuaiImgs.gameObject);
+                num = num * 2;
+                UpDateTextLevel();
+            }
+            if(isTouch == true)
+            {
+                isTouch = false;
+                switch (kuaiOs.IsTouch)
+                {
+                    case 1:
+                        kuaiOs.KuaiToAdd();
+                        break;
+                    case 2:
+                        kuaiOs.KuaiToMove();
+                        break;
+                    case 3:
+                        kuaiOs.KuaiToEnd();
+                        break;
+                }
             }
         }
     }
@@ -75,6 +107,5 @@ public class KuaiImgs : MonoBehaviour
     public void SetNum()
     {
         num = num * 2;
-        Debug.Log(num);
     }
 }
