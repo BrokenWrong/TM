@@ -1,0 +1,23 @@
+fileFormatVersion: 2
+guid: 3dbe3e7767be62f40966a565e9a9e415
+timeCreated: 1544163695
+licenseType: Free
+TrueTypeFontImporter:
+  externalObjects: {}
+  serializedVersion: 4
+  fontSize: 16
+  forceTextureCase: -2
+  characterSpacing: 0
+  characterPadding: 1
+  includeFontData: 1
+  fontName: DFPOP3W12-GB5
+  fontNames:
+  - DFPOP3W12-GB5
+  fallbackFontReferences: []
+  customCharacters: 
+  fontRenderingMode: 0
+  ascentCalculationMode: 1
+  useLegacyBoundsCalculation: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
