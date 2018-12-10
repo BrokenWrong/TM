@@ -65,6 +65,13 @@ public class KuaiOs : MonoBehaviour
 
     private int touchI = -1;
 
+    private int currCount = 0;
+    private int maxCount = 0;
+
+    private GameManagers gameManagers;
+
+    private bool isPlay = false;
+
     void Awake()
     {
         isHave = new bool[]
@@ -82,20 +89,26 @@ public class KuaiOs : MonoBehaviour
         listArr.Add(rightArr);
 
         IsTouch = 0;
+        isPlay = true;
+    }
+
+    public void OnPlay(Transform tf)
+    {
+        gameManagers = tf.GetComponent<GameManagers>();
     }
 
     void Start()
     {
         Begin();
-        //LoadKuai(0);
+        //LoadKuai(2);
+        //LoadKuai(3);
         //LoadKuai(4);
-        //LoadKuai(8);
-        //LoadKuai(12);
-        //Ss();
+        //LoadKuai(7);
     }
 
     void Update()
     {
+        if (!isPlay) return;
         InputKey();
     }
 
@@ -129,28 +142,28 @@ public class KuaiOs : MonoBehaviour
     }
     public void UpClick()
     {
-        if (IsTouch != 0) return;
+        if (IsTouch != 0 || !isPlay) return;
         touchI = 0;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
     }
     public void DownClick()
     {
-        if (IsTouch != 0) return;
+        if (IsTouch != 0 || !isPlay) return;
         touchI = 1;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
     }
     public void LeftClick()
     {
-        if (IsTouch != 0) return;
+        if (IsTouch != 0 || !isPlay) return;
         touchI = 2;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
     }
     public void RightClick()
     {
-        if (IsTouch != 0) return;
+        if (IsTouch != 0 || !isPlay) return;
         touchI = 3;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
@@ -161,7 +174,9 @@ public class KuaiOs : MonoBehaviour
         for (int i = 0; i < isHave.Length; i++)
         {
             if (isHave[i])
-                Debug.Log(i.ToString() + " : " + isHave[i]);
+            {
+                //Debug.Log(i.ToString() + " : " + isHave[i]);
+            }
         }
     }
 
@@ -253,24 +268,46 @@ public class KuaiOs : MonoBehaviour
 
     private void KuaiMove(ArrayList list)
     {
+        maxCount = list.Count;
         for (int i = 0; i < list.Count; i++)
         {
             string[] arr = list[i].ToString().Split(';');
             int i1 = int.Parse(arr[0]);
             int i2 = int.Parse(arr[1]);
-            kuaiImgsA[i1].Move(BgImgs[i2].transform, i == list.Count - 1, i1, false);
+            kuaiImgsA[i1].Move(BgImgs[i2].transform, i2, false);
             kuaiImgsA[i2] = kuaiImgsA[i1];
+            kuaiImgsA[i1] = null;
         }
     }
     private void KuaiAdd(ArrayList list)
     {
+        maxCount = list.Count;
         for (int i = 0; i < list.Count; i++)
         {
             string[] arr = list[i].ToString().Split(';');
             int i1 = int.Parse(arr[0]);
             int i2 = int.Parse(arr[1]);
-            kuaiImgsA[i1].Add(BgImgs[i2].transform, i == list.Count - 1, i1, kuaiImgsA[i2].transform, true);
+            kuaiImgsA[i1].Add(BgImgs[i2].transform, i2, kuaiImgsA[i2].transform, true);
             kuaiImgsA[i2] = kuaiImgsA[i1];
+            kuaiImgsA[i1] = null;
+        }
+    }
+    public void AddCount()
+    {
+        currCount++;
+        if (currCount != maxCount) return;
+        currCount = 0;
+        switch (IsTouch)
+        {
+            case 1:
+                KuaiToAdd();
+                break;
+            case 2:
+                KuaiToMove();
+                break;
+            case 3:
+                KuaiToEnd();
+                break;
         }
     }
 
@@ -299,7 +336,8 @@ public class KuaiOs : MonoBehaviour
         }
         if (list.Count == 0)
         {
-            Debug.Log("end");
+            isPlay = false;
+            gameManagers.LoadEndO();
             return;
         }
         int index = UnityEngine.Random.Range(0, list.Count);
@@ -313,5 +351,6 @@ public class KuaiOs : MonoBehaviour
         tf.localPosition = vec3VA[i];
         tf.GetComponent<KuaiImgs>().OnKuai(i, transform);
         kuaiImgsA[i] = tf.GetComponent<KuaiImgs>();
+        Ss();
     }
 }

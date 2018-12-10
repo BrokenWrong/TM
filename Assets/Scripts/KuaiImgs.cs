@@ -27,7 +27,6 @@ public class KuaiImgs : MonoBehaviour
     private bool isMove = false;
     private float speed = 0.05f;
     private float distance;
-    private bool isTouch = false;
     private bool isDelete = false;
 
     public void OnKuai(int index, Transform tf)
@@ -43,20 +42,18 @@ public class KuaiImgs : MonoBehaviour
         NumText.text = num.ToString();
     }
 
-    public void Move(Transform tf, bool bl, int i, bool de)
+    public void Move(Transform tf, int i, bool de)
     {
         id = i;
-        isTouch = bl;
         target = tf;
         isDelete = de;
         distance = Vector2.Distance(transform.localPosition, target.localPosition);
         isMove = true;
     }
 
-    public void Add(Transform tf, bool bl, int i, Transform k, bool de)
+    public void Add(Transform tf, int i, Transform k, bool de)
     {
         id = i;
-        isTouch = bl;
         target = tf;
         kuaiImgs = k;
         isDelete = de;
@@ -81,22 +78,7 @@ public class KuaiImgs : MonoBehaviour
                 num = num * 2;
                 UpDateTextLevel();
             }
-            if(isTouch == true)
-            {
-                isTouch = false;
-                switch (kuaiOs.IsTouch)
-                {
-                    case 1:
-                        kuaiOs.KuaiToAdd();
-                        break;
-                    case 2:
-                        kuaiOs.KuaiToMove();
-                        break;
-                    case 3:
-                        kuaiOs.KuaiToEnd();
-                        break;
-                }
-            }
+            kuaiOs.AddCount();
         }
     }
 
