@@ -117,32 +117,54 @@ public class KuaiOs : MonoBehaviour
         if (IsTouch != 0) return;
         if (Input.GetKeyDown(KeyCode.UpArrow))
         {
+            if (!IsMove((int[][])listArr[0]) && !IsAdd((int[][])listArr[0])) return;
             touchI = 0;
             IsTouch = 1;
             ToMove((int[][])listArr[touchI]);
         }
         else if (Input.GetKeyDown(KeyCode.DownArrow))
         {
+            if (!IsMove((int[][])listArr[1]) && !IsAdd((int[][])listArr[1])) return;
             touchI = 1;
             IsTouch = 1;
             ToMove((int[][])listArr[touchI]);
         }
         else if (Input.GetKeyDown(KeyCode.LeftArrow))
         {
+            if (!IsMove((int[][])listArr[2]) && !IsAdd((int[][])listArr[2])) return;
             touchI = 2;
             IsTouch = 1;
             ToMove((int[][])listArr[touchI]);
         }
         else if (Input.GetKeyDown(KeyCode.RightArrow))
         {
+            if (!IsMove((int[][])listArr[3]) && !IsAdd((int[][])listArr[3])) return;
             touchI = 3;
             IsTouch = 1;
             ToMove((int[][])listArr[touchI]);
         }
     }
+    private void End()
+    {
+        int count = 0;
+        for (int i = 0; i < isHave.Length; i++)
+        {
+            if (!isHave[i])
+            {
+                count++;
+            }
+        }
+        if (!IsAdd() && count == 0)
+        {
+            isPlay = false;
+            gameManagers.LoadEndO();
+        }
+    }
+
     public void UpClick()
     {
         if (IsTouch != 0 || !isPlay) return;
+        if (!IsMove((int[][])listArr[0]) && !IsAdd((int[][])listArr[0])) return;
         touchI = 0;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
@@ -150,6 +172,7 @@ public class KuaiOs : MonoBehaviour
     public void DownClick()
     {
         if (IsTouch != 0 || !isPlay) return;
+        if (!IsMove((int[][])listArr[1]) && !IsAdd((int[][])listArr[1])) return;
         touchI = 1;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
@@ -157,6 +180,7 @@ public class KuaiOs : MonoBehaviour
     public void LeftClick()
     {
         if (IsTouch != 0 || !isPlay) return;
+        if (!IsMove((int[][])listArr[2]) && !IsAdd((int[][])listArr[2])) return;
         touchI = 2;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
@@ -164,6 +188,7 @@ public class KuaiOs : MonoBehaviour
     public void RightClick()
     {
         if (IsTouch != 0 || !isPlay) return;
+        if (!IsMove((int[][])listArr[3]) && !IsAdd((int[][])listArr[3])) return;
         touchI = 3;
         IsTouch = 1;
         ToMove((int[][])listArr[touchI]);
@@ -212,6 +237,27 @@ public class KuaiOs : MonoBehaviour
         }
         KuaiMove(list);
     }
+    private bool IsMove(int[][] iArr)
+    {
+        bool isMove = false;
+        for (int i = 0; i < iArr.Length; i++)
+        {
+            int index = 0;
+            for (int j = 0; j < iArr[i].Length; j++)
+            {
+                if (isHave[iArr[i][j]])
+                {
+                    if (!isHave[iArr[i][index]] && j != index)
+                    {
+                        isMove = true;
+                        return isMove;
+                    }
+                    index++;
+                }
+            }
+        }
+        return isMove;
+    }
 
     private void ToAdd(int[][] iArr)
     {
@@ -248,6 +294,66 @@ public class KuaiOs : MonoBehaviour
             return;
         }
         KuaiAdd(list);
+    }
+    private bool IsAdd()
+    {
+        bool isAdd = false;
+        for (int a = 0; a < listArr.Count; a++)
+        {
+            int[][] iArr = (int[][])listArr[a];
+            for (int i = 0; i < iArr.Length; i++)
+            {
+                int index = 0;
+                if (!isHave[iArr[i][index]])
+                {
+                    continue;
+                }
+                for (int j = 1; j < iArr[i].Length; j++)
+                {
+                    if (isHave[iArr[i][j]])
+                    {
+                        if (isHave[iArr[i][index]])
+                        {
+                            if (kuaiImgsA[iArr[i][j]].GetNum() == kuaiImgsA[iArr[i][index]].GetNum())
+                            {
+                                isAdd = true;
+                                return isAdd;
+                            }
+                            index++;
+                        }
+                    }
+                }
+            }
+        }
+        return isAdd;
+    }
+    private bool IsAdd(int[][] iArr)
+    {
+        bool isAdd = false;
+        for (int i = 0; i < iArr.Length; i++)
+        {
+            int index = 0;
+            if (!isHave[iArr[i][index]])
+            {
+                continue;
+            }
+            for (int j = 1; j < iArr[i].Length; j++)
+            {
+                if (isHave[iArr[i][j]])
+                {
+                    if (isHave[iArr[i][index]])
+                    {
+                        if (kuaiImgsA[iArr[i][j]].GetNum() == kuaiImgsA[iArr[i][index]].GetNum())
+                        {
+                            isAdd = true;
+                            return isAdd;
+                        }
+                        index++;
+                    }
+                }
+            }
+        }
+        return isAdd;
     }
 
     public void KuaiToAdd()
@@ -336,12 +442,12 @@ public class KuaiOs : MonoBehaviour
         }
         if (list.Count == 0)
         {
-            isPlay = false;
-            gameManagers.LoadEndO();
+            End();
             return;
         }
         int index = UnityEngine.Random.Range(0, list.Count);
         LoadKuai((int)list[index]);
+        End();
     }
 
     private void LoadKuai(int i)
