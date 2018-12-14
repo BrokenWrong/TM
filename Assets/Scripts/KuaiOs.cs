@@ -66,10 +66,7 @@ public class KuaiOs : MonoBehaviour
 
     void Start()
     {
-        LoadKuai(4);
-        LoadKuai(5);
-        LoadKuai(12);
-        LoadKuai(15);
+        Begin();
     }
 
     void Update()
@@ -161,6 +158,8 @@ public class KuaiOs : MonoBehaviour
             kuaiTf[i1].GetComponent<Img1s>().Move(BgImgs[i2].transform, i == list.Count - 1);
             kuaiTf[i2] = kuaiTf[i1];
         }
+
+        AddKuai();
     }
 
     private void Begin()
@@ -174,6 +173,24 @@ public class KuaiOs : MonoBehaviour
             i2 = (i2 + 1 == 16) ? i2 - 1 : i2 + 1;
         }
         LoadKuai(i2);
+    }
+
+    private void AddKuai()
+    {
+        ArrayList list = new ArrayList();
+        for (int i = 0; i < isHave.Length; i++)
+        {
+            if(!isHave[i])
+            {
+                list.Add(i);
+            }
+        }
+        if (list.Count == 0)
+        {
+
+        }
+        int index = UnityEngine.Random.Range(0, list.Count);
+        LoadKuai(index);
     }
    
     private void LoadKuai(int i)
