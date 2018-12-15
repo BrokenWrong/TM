@@ -12,7 +12,6 @@ public class Img1s : MonoBehaviour
 
     private KuaiOs kuaiOs;
 
-    private bool isB = false;
 
     private Transform target;
     private bool isMove = false;
