@@ -1,16 +1,16 @@
 {
   "ver": "2.3.0",
-  "uuid": "f04777ff-701c-4c2c-95f2-c30d8a4cb146",
+  "uuid": "ae73cb01-7c25-49af-88b6-1e3f179c99be",
   "type": "sprite",
   "wrapMode": "clamp",
   "filterMode": "bilinear",
   "premultiplyAlpha": false,
   "platformSettings": {},
   "subMetas": {
-    "sp": {
+    "游戏界面": {
       "ver": "1.0.3",
-      "uuid": "31087fa6-9e3e-49d7-b0cb-e79c6765762f",
-      "rawTextureUuid": "f04777ff-701c-4c2c-95f2-c30d8a4cb146",
+      "uuid": "126e2543-5dbc-4394-852f-cd65bf2f6170",
+      "rawTextureUuid": "ae73cb01-7c25-49af-88b6-1e3f179c99be",
       "trimType": "auto",
       "trimThreshold": 1,
       "rotated": false,

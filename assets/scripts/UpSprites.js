@@ -14,7 +14,7 @@ cc.Class({
     onLoad () {
         this.curr = 0;
         this.begin = 100;
-        this.continued = 130;
+        this.continued = 150;
         this.index = 0;
         this.play = false;
         this.isDisplay = false;
