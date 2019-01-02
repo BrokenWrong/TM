@@ -41,3 +41,15 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: BgUI
+    uniqueID: 2316216703
+    locked: 0
+  - name: Sprite
+    uniqueID: 1158428451
+    locked: 0
+  - name: UpUI
+    uniqueID: 2614014545
+    locked: 0
+  - name: UpSprite
+    uniqueID: 2407817887
+    locked: 0
