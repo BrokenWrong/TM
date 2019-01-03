@@ -5,20 +5,19 @@ using UnityEngine;
 public class GameManagers : MonoBehaviour {
     public GameObject Begin;
     public GameObject Pass;
-    private Passs passs;
-    // Use this for initialization
+    public GameObject Play;
+    //private Passs passs;
 
     void Awake()
     {
-        passs = Pass.transform.GetComponent<Passs>();
+        //passs = Pass.transform.GetComponent<Passs>();
     }
 
     void Start () {
         Begin.SetActive(true);
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    void Update () {
 		
 	}
 
@@ -26,5 +25,11 @@ public class GameManagers : MonoBehaviour {
     {
         Begin.SetActive(false);
         Pass.SetActive(true);
+    }
+
+    public void OnPlay()
+    {
+        Pass.SetActive(false);
+        Play.SetActive(true);
     }
 }
