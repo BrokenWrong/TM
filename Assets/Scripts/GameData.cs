@@ -21,7 +21,7 @@ public class GameData{
     public int passAdopt = 5;
 
     // 当前正在通关
-    public int passCurr = 6;
+    public int passCurr = 0;
 
     // 当前通关关卡选关点
     public ArrayList passChooseSpot = new ArrayList();

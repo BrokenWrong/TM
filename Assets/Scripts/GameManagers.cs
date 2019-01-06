@@ -31,5 +31,12 @@ public class GameManagers : MonoBehaviour {
     {
         Pass.SetActive(false);
         Play.SetActive(true);
+        Play.GetComponent<Plays>().OnPlay();
+    }
+
+    public void CgClick()
+    {
+        Play.SetActive(false);
+        Pass.SetActive(true);
     }
 }

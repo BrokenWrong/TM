@@ -41,6 +41,7 @@ public class Passs : MonoBehaviour {
         {
             Transform tf = Instantiate(PinZi, Check).transform;
             tf.localPosition = pinZiVA[i];
+            tf.GetComponent<PinZis>().OnPinZi(transform, i + 1);
         }
     }
 
@@ -48,7 +49,8 @@ public class Passs : MonoBehaviour {
     {
         if (GameData.Instance().passChooseSpot.Count == GameData.Instance().passMax) return;
         Transform tf = Instantiate(PinZiNot, Check).transform;
-        tf.localPosition = pinZiVA[GameData.Instance().passCurr - 1];
+        tf.localPosition = pinZiVA[GameData.Instance().passAdopt];
+        tf.GetComponent<PinZiNots>().OnPinZi(transform, GameData.Instance().passAdopt + 1);
     }
 
     private void LoadCheckBtn()
@@ -59,7 +61,7 @@ public class Passs : MonoBehaviour {
             {
                 Transform tf = Instantiate(CheckBtn, Check).transform;
                 tf.localPosition = checkVA[i];
-                tf.GetComponent<CheckBtns>().OnCheck(transform, i);
+                tf.GetComponent<CheckBtns>().OnCheck(transform, i + 1);
             }
         }
     }
@@ -67,5 +69,12 @@ public class Passs : MonoBehaviour {
     public void CheckClick()
     {
         gameManagers.OnPlay();
+        Debug.Log(GameData.Instance().passCurr);
+    }
+
+    public void PinZiClick()
+    {
+        gameManagers.OnPlay();
+        Debug.Log(GameData.Instance().passCurr);
     }
 }
