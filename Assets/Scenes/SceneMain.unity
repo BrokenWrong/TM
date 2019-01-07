@@ -3374,6 +3374,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playUIs: {fileID: 1993362947}
+  FastImgs:
+  - {fileID: 644787585}
+  - {fileID: 1187376870}
+  - {fileID: 847444155}
+  - {fileID: 328435597}
+  - {fileID: 319711407}
+  - {fileID: 573227838}
+  - {fileID: 1704498457}
+  - {fileID: 1667004451}
+  - {fileID: 599935726}
+  BgImg: {fileID: 2009453516}
+  RoleImg: {fileID: 1166378223}
 --- !u!1 &1993362945
 GameObject:
   m_ObjectHideFlags: 0

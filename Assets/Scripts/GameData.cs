@@ -37,6 +37,11 @@ public class GameData{
         AddPassChooseSpot(2);
         AddPassChooseSpot(3);
         AddPassChooseSpot(4);
+        //AddPassChooseSpot(5);
+        //AddPassChooseSpot(6);
+        //AddPassChooseSpot(7);
+        //AddPassChooseSpot(8);
+        //AddPassChooseSpot(9);
     }
 
     // 添加关卡选关点
@@ -49,5 +54,15 @@ public class GameData{
     public bool IsPassChooseSpot(int i)
     {
         return passChooseSpot.Contains(i);
+    }
+
+    // 通关保存数据
+    public void SaveData()
+    {
+        if(!IsPassChooseSpot(spotCurr))
+        {
+            AddPassChooseSpot(spotCurr);
+            passAdopt++;
+        }
     }
 }

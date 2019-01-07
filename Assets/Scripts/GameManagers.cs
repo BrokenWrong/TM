@@ -38,5 +38,6 @@ public class GameManagers : MonoBehaviour {
     {
         Play.SetActive(false);
         Pass.SetActive(true);
+        Pass.GetComponent<Passs>().OnPass();
     }
 }

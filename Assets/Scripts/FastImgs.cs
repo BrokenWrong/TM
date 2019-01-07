@@ -28,8 +28,8 @@ public class FastImgs : MonoBehaviour {
     void Start()
     {
         AddHamsterBtn();
-        plays.DisplayPlayUi();
-        transform.gameObject.SetActive(false);
+        //plays.DisplayPlayUi();
+        //transform.gameObject.SetActive(false);
     }
 
     void Update()

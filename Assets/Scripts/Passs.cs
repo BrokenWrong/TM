@@ -24,10 +24,19 @@ public class Passs : MonoBehaviour {
     public GameObject PinZi;
     public GameObject PinZiNot;
 
+    // 通关关数保留
+    private int passAdopt = 0;
+
     void Start () {
+        passAdopt = GameData.Instance().passAdopt;
         LoadPinZi();
         LoadPinZiNot();
         LoadCheckBtn();
+    }
+
+    public void OnPass()
+    {
+        RefreshBtn();
     }
 	
 	void Update () {
@@ -47,7 +56,7 @@ public class Passs : MonoBehaviour {
 
     private void LoadPinZiNot()
     {
-        if (GameData.Instance().passChooseSpot.Count == GameData.Instance().passMax) return;
+        if (GameData.Instance().passAdopt == GameData.Instance().passMax) return;
         Transform tf = Instantiate(PinZiNot, Check).transform;
         tf.localPosition = pinZiVA[GameData.Instance().passAdopt];
         tf.GetComponent<PinZiNots>().OnPinZi(transform, GameData.Instance().passAdopt + 1);
@@ -69,12 +78,24 @@ public class Passs : MonoBehaviour {
     public void CheckClick()
     {
         gameManagers.OnPlay();
-        Debug.Log(GameData.Instance().passCurr);
     }
 
     public void PinZiClick()
     {
         gameManagers.OnPlay();
-        Debug.Log(GameData.Instance().passCurr);
+    }
+
+    private void RefreshBtn()
+    {
+        if (GameData.Instance().passAdopt == passAdopt) return;
+        for (int i = 0; i < Check.childCount; i++)
+        {
+            Transform tf = Check.GetChild(i);
+            Destroy(tf.gameObject);
+        }
+        LoadPinZi();
+        LoadPinZiNot();
+        LoadCheckBtn();
+        passAdopt = GameData.Instance().passAdopt;
     }
 }
