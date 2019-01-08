@@ -14,7 +14,7 @@ public class CheckBtns : MonoBehaviour {
 
     public void CheckClick()
     {
-        GameData.Instance().spotCurr = indexI;
+        GameData.Instance().spotCurr = indexI - 1;
         GameData.Instance().passCurr = GameData.Instance().passAdopt + 1;
         passs.CheckClick();
     }

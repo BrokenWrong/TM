@@ -14,7 +14,7 @@ public class PinZiNots : MonoBehaviour {
 
     public void PinZiClick()
     {
-        GameData.Instance().spotCurr = indexI;
+        GameData.Instance().spotCurr = indexI - 1;
         GameData.Instance().passCurr = GameData.Instance().passAdopt + 1;
         passs.PinZiClick();
     }

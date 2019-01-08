@@ -18,7 +18,7 @@ public class GameData{
     public int passMax = 10;
 
     // 已通关关卡数
-    public int passAdopt = 5;
+    public int passAdopt = 0;
 
     // 当前正在通关
     public int passCurr = 0;
@@ -32,16 +32,54 @@ public class GameData{
     // 初始化
     private void Init()
     {
-        AddPassChooseSpot(0);
-        AddPassChooseSpot(1);
-        AddPassChooseSpot(2);
-        AddPassChooseSpot(3);
-        AddPassChooseSpot(4);
+        GetSaveFileData();
+        //AddPassChooseSpot(0);
+        //AddPassChooseSpot(1);
+        //AddPassChooseSpot(2);
+        //AddPassChooseSpot(3);
+        //AddPassChooseSpot(4);
         //AddPassChooseSpot(5);
         //AddPassChooseSpot(6);
         //AddPassChooseSpot(7);
         //AddPassChooseSpot(8);
         //AddPassChooseSpot(9);
+    }
+
+    // 获取存档
+    private void GetSaveFileData()
+    {
+        string[] strArr1 = new string[] { "passAdopt", "passChooseSpot",};
+        string[] strArr2 = new string[] { "0", "n",};
+        Dictionary<string, string> dict = GameSaveData.ObtainData("save1_1", strArr1, strArr2);
+        passAdopt = int.Parse(dict["passAdopt"]);
+        string[] passChooseSpotA = dict["passChooseSpot"].Split(';');
+        if (passChooseSpotA[0] == "n") return;
+        for (int i = 0; i < passChooseSpotA.Length; i++)
+        {
+            passChooseSpot.Add(int.Parse(passChooseSpotA[i]));
+        }
+    }
+
+    // 保存存档
+    public void SaveFileData()
+    {
+        string[] strArr1 = new string[] { "passAdopt", "passChooseSpot", };
+        string[] strArr2 = new string[] { passAdopt.ToString(), GetPassChooseSpotS(), };
+        GameSaveData.SaveData("save1_1", strArr1, strArr2);
+    }
+    private string GetPassChooseSpotS()
+    {
+        string passChooseSpotS = "";
+        if(passChooseSpot.Count == 0)
+        {
+            return "n";
+        }
+        passChooseSpotS = passChooseSpot[0].ToString();
+        for (int i = 1; i < passChooseSpot.Count; i++)
+        {
+            passChooseSpotS = passChooseSpotS + ";" + passChooseSpot[i].ToString();
+        }
+        return passChooseSpotS;
     }
 
     // 添加关卡选关点
@@ -56,13 +94,27 @@ public class GameData{
         return passChooseSpot.Contains(i);
     }
 
+    // 选出没通过的选关点
+    public int GetPassChooseSpot()
+    {
+        int index = 0;
+        for (int i = 0; i < passMax; i++)
+        {
+            if(!IsPassChooseSpot(i))
+            {
+                index = i;
+                break;
+            }
+        }
+        return index;
+    }
+
     // 通关保存数据
     public void SaveData()
     {
-        if(!IsPassChooseSpot(spotCurr))
-        {
-            AddPassChooseSpot(spotCurr);
-            passAdopt++;
-        }
+        if (passCurr <= passAdopt) return;
+        AddPassChooseSpot(spotCurr);
+        passAdopt++;
+        SaveFileData();
     }
 }

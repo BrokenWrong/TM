@@ -8,6 +8,7 @@ public class HamsterBtns : MonoBehaviour {
 
     public void BtnClcik()
     {
+        SetHamsterImgEnabled(false);
         transform.parent.GetComponent<FastImgs>().HamsterClick();
     }
 

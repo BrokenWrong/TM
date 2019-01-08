@@ -10,6 +10,7 @@ public class GameManagers : MonoBehaviour {
 
     void Awake()
     {
+        GameData.Instance();
         //passs = Pass.transform.GetComponent<Passs>();
     }
 
@@ -39,5 +40,11 @@ public class GameManagers : MonoBehaviour {
         Play.SetActive(false);
         Pass.SetActive(true);
         Pass.GetComponent<Passs>().OnPass();
+    }
+
+    public void AgainClick()
+    {
+        Play.SetActive(true);
+        Play.GetComponent<Plays>().AgainPlay();
     }
 }

@@ -21,17 +21,36 @@ public class Plays : MonoBehaviour {
 
     public void OnPlay()
     {
+        openShelter = 0;
         bool bl = GameData.Instance().passCurr > GameData.Instance().passAdopt;
         for (int i = 0; i < FastImgs.Length; i++)
         {
             FastImgs[i].SetActive(bl);
-            FastImgs[i].GetComponent<FastImgs>().OnExit();
+            FastImgs[i].GetComponent<FastImgs>().InitDisplay();
         }
+        isUiEnabled = !bl;
         playUIs.SetCanvasGroup(!bl);
 
-        string str = "Textures/" + GameData.Instance().passCurr.ToString() + "A";
+        string str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "A";
         BgImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
-        str = "Textures/" + GameData.Instance().passCurr.ToString() + "B";
+        str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "B";
+        RoleImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
+    }
+
+    public void AgainPlay()
+    {
+        openShelter = 0;
+        for (int i = 0; i < FastImgs.Length; i++)
+        {
+            FastImgs[i].SetActive(true);
+            FastImgs[i].GetComponent<FastImgs>().InitDisplay();
+        }
+        isUiEnabled = false;
+        playUIs.SetCanvasGroup(false);
+
+        string str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "A";
+        BgImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
+        str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "B";
         RoleImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
     }
 
@@ -62,7 +81,7 @@ public class Plays : MonoBehaviour {
         if(openShelter == 9)
         {
             GameData.Instance().SaveData();
-            SetPlayUiEnabled();
+            DisplayPlayUi();
         }
     }
 }

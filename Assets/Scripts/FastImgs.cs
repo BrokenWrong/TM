@@ -79,4 +79,16 @@ public class FastImgs : MonoBehaviour {
         }
         currTime++;
     }
+
+    public void InitDisplay()
+    {
+        isEnter = false;
+        isDisplay = false;
+        currTime = 0;
+        if (!hamsterBtns[0]) return;
+        for (int i = 0; i < hamsterBtns.Length; i++)
+        {
+            hamsterBtns[i].SetHamsterImgEnabled(false);
+        }
+    }
 }
