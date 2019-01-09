@@ -6,6 +6,7 @@ public class GameManagers : MonoBehaviour {
     public GameObject Begin;
     public GameObject Pass;
     public GameObject Play;
+    public SoundOs soundOs;
     //private Passs passs;
 
     void Awake()
@@ -24,6 +25,7 @@ public class GameManagers : MonoBehaviour {
 
     public void BeginClick()
     {
+        soundOs.PlayBtnSound();
         Begin.SetActive(false);
         Pass.SetActive(true);
     }
@@ -46,5 +48,11 @@ public class GameManagers : MonoBehaviour {
     {
         Play.SetActive(true);
         Play.GetComponent<Plays>().AgainPlay();
+    }
+
+    public void LoadBegin()
+    {
+        Pass.SetActive(false);
+        Begin.SetActive(true);
     }
 }

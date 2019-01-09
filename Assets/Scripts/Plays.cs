@@ -14,6 +14,8 @@ public class Plays : MonoBehaviour {
     // 当前已打开遮挡快
     private int openShelter = 0;
 
+    
+
     void Update()
     {
         MouseClick();
@@ -57,6 +59,10 @@ public class Plays : MonoBehaviour {
     private void MouseClick()
     {
         if(Input.GetMouseButtonDown(1))
+        {
+            SetPlayUiEnabled();
+        }
+        else if (Input.GetKeyDown(KeyCode.Escape))
         {
             SetPlayUiEnabled();
         }

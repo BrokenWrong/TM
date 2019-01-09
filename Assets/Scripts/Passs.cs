@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Passs : MonoBehaviour {
     public GameManagers gameManagers;
+    public SoundOs soundOs;
 
     private Vector3[] checkVA =
     {
@@ -40,8 +41,11 @@ public class Passs : MonoBehaviour {
     }
 	
 	void Update () {
-		
-	}
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            gameManagers.LoadBegin();
+        }
+    }
 
     private void LoadPinZi()
     {
@@ -77,16 +81,19 @@ public class Passs : MonoBehaviour {
 
     public void CheckClick()
     {
+        soundOs.PlayBtnSound();
         gameManagers.OnPlay();
     }
 
     public void PinZiClick()
     {
+        soundOs.PlayBtnSound();
         gameManagers.OnPlay();
     }
 
     private void RefreshBtn()
     {
+        soundOs.PlayBtnSound();
         if (GameData.Instance().passAdopt == passAdopt) return;
         for (int i = 0; i < Check.childCount; i++)
         {

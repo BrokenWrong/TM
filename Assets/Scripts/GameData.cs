@@ -29,6 +29,9 @@ public class GameData{
     // 当前正在通关的选关点
     public int spotCurr = 0;
 
+    // 当前音效
+    public bool isHaveSound = true;
+
     // 初始化
     private void Init()
     {
@@ -48,10 +51,11 @@ public class GameData{
     // 获取存档
     private void GetSaveFileData()
     {
-        string[] strArr1 = new string[] { "passAdopt", "passChooseSpot",};
-        string[] strArr2 = new string[] { "0", "n",};
+        string[] strArr1 = new string[] { "passAdopt", "passChooseSpot", "isHaveSound" };
+        string[] strArr2 = new string[] { "0", "n", "1"};
         Dictionary<string, string> dict = GameSaveData.ObtainData("save1_1", strArr1, strArr2);
         passAdopt = int.Parse(dict["passAdopt"]);
+        isHaveSound = dict["isHaveSound"] == "1";
         string[] passChooseSpotA = dict["passChooseSpot"].Split(';');
         if (passChooseSpotA[0] == "n") return;
         for (int i = 0; i < passChooseSpotA.Length; i++)
@@ -63,8 +67,8 @@ public class GameData{
     // 保存存档
     public void SaveFileData()
     {
-        string[] strArr1 = new string[] { "passAdopt", "passChooseSpot", };
-        string[] strArr2 = new string[] { passAdopt.ToString(), GetPassChooseSpotS(), };
+        string[] strArr1 = new string[] { "passAdopt", "passChooseSpot", "isHaveSound" };
+        string[] strArr2 = new string[] { passAdopt.ToString(), GetPassChooseSpotS(), isHaveSound ? "1" : "0" };
         GameSaveData.SaveData("save1_1", strArr1, strArr2);
     }
     private string GetPassChooseSpotS()

@@ -9,6 +9,11 @@ public class PlayUIs : MonoBehaviour {
     public GameObject LeftBtn;
     public GameObject RightBtn;
 
+    public SoundOs soundOs;
+
+    public GameObject SoundBtn;
+    public GameObject SoundBtny;
+
     public void SetCanvasGroup(bool bl)
     {
         if(bl == true)
@@ -20,6 +25,7 @@ public class PlayUIs : MonoBehaviour {
             LeftBtn.SetActive(lbl);
             bool rbl = (GameData.Instance().passCurr != 10 && GameData.Instance().passCurr <= GameData.Instance().passAdopt);
             RightBtn.SetActive(rbl);
+            RefreshSoundBtn();
         }
         else
         {
@@ -36,16 +42,25 @@ public class PlayUIs : MonoBehaviour {
 
     public void CgClick()
     {
+        soundOs.PlayBtnSound();
         gameManagers.CgClick();
     }
 
     public void SoundClick()
     {
-
+        GameData.Instance().isHaveSound = !GameData.Instance().isHaveSound;
+        GameData.Instance().SaveFileData();
+        RefreshSoundBtn();
+    }
+    private void RefreshSoundBtn()
+    {
+        SoundBtn.SetActive(!GameData.Instance().isHaveSound);
+        SoundBtny.SetActive(GameData.Instance().isHaveSound);
     }
 
     public void AgainClick()
     {
+        soundOs.PlayBtnSound();
         gameManagers.AgainClick();
     }
 
@@ -67,6 +82,7 @@ public class PlayUIs : MonoBehaviour {
     public void LeftClick()
     {
         if (GameData.Instance().passCurr == 1) return;
+        soundOs.PlayBtnSound();
         GameData.Instance().passCurr--;
         gameManagers.OnPlay();
     }
@@ -74,6 +90,7 @@ public class PlayUIs : MonoBehaviour {
     public void RightClick()
     {
         if (GameData.Instance().passCurr == 10) return;
+        soundOs.PlayBtnSound();
         GameData.Instance().passCurr++;
         if(GameData.Instance().IsPassChooseSpot(GameData.Instance().spotCurr))
         {

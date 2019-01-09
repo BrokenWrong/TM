@@ -6,6 +6,7 @@ public class FastImgs : MonoBehaviour {
     public GameObject HamsterBtn;
     private HamsterBtns[] hamsterBtns = new HamsterBtns[9];
     public Plays plays;
+    public SoundOs soundOs;
 
     // 当前显示的地鼠
     private int currHamster = 0;
@@ -58,6 +59,7 @@ public class FastImgs : MonoBehaviour {
 
     public void HamsterClick()
     {
+        soundOs.PlayDishuSound();
         transform.gameObject.SetActive(false);
         plays.AddOpenShelter();
     }
