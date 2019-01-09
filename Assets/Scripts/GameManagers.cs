@@ -30,6 +30,12 @@ public class GameManagers : MonoBehaviour {
         Pass.SetActive(true);
     }
 
+    public void ExitClick()
+    {
+        soundOs.PlayBtnSound();
+        Application.Quit();
+    }
+
     public void OnPlay()
     {
         Pass.SetActive(false);

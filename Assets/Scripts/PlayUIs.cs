@@ -98,4 +98,10 @@ public class PlayUIs : MonoBehaviour {
         }
         gameManagers.OnPlay();
     }
+
+    public void ExitClick()
+    {
+        soundOs.PlayBtnSound();
+        Application.Quit();
+    }
 }
