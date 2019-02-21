@@ -8,6 +8,8 @@ public class GameManagers : MonoBehaviour {
     public GameObject Play;
     public SoundOs soundOs;
     //private Passs passs;
+    public MainVideos mainVideos;
+    public CanvasGroup BeginGroup;
 
     void Awake()
     {
@@ -16,15 +18,39 @@ public class GameManagers : MonoBehaviour {
     }
 
     void Start () {
+        // 播放背景音乐
+        soundOs.PlayBgSound(19);
+    }
+
+    public void OnStart()
+    {
         Begin.SetActive(true);
+        StartCoroutine("DisplayBeginUI");
+    }
+
+    IEnumerator DisplayBeginUI()
+    {
+        BeginGroup.blocksRaycasts = true;
+        while (BeginGroup.alpha < 1)
+        {
+            BeginGroup.alpha = BeginGroup.alpha + 0.01f;
+            yield return 0;
+        }
     }
 
     void Update () {
 		
 	}
 
+    // 开始游戏按钮
     public void BeginClick()
     {
+        // 隐藏视频播放
+        mainVideos.HideVoide();
+        mainVideos.gameObject.SetActive(false);
+        BeginGroup.alpha = 0;
+        BeginGroup.blocksRaycasts = false;
+
         soundOs.PlayBtnSound();
         Begin.SetActive(false);
         Pass.SetActive(true);
@@ -45,6 +71,9 @@ public class GameManagers : MonoBehaviour {
 
     public void CgClick()
     {
+        // 播放界面背景音乐
+        soundOs.PlayBgSound(19);
+
         Play.SetActive(false);
         Pass.SetActive(true);
         Pass.GetComponent<Passs>().OnPass();
@@ -59,6 +88,11 @@ public class GameManagers : MonoBehaviour {
     public void LoadBegin()
     {
         Pass.SetActive(false);
-        Begin.SetActive(true);
+
+        //Begin.SetActive(true);
+        //StartCoroutine("DisplayBeginUI");
+
+        mainVideos.gameObject.SetActive(true);
+        mainVideos.PlayXunhuan();
     }
 }

@@ -32,6 +32,9 @@ public class GameData{
     // 当前音效
     public bool isHaveSound = true;
 
+    // 音乐
+    public SoundOs soundOs;
+
     // 初始化
     private void Init()
     {

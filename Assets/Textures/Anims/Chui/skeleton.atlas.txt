@@ -1,0 +1,144 @@
+
+skeleton.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+b/b_00000
+  rotate: false
+  xy: 2, 1406
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00001
+  rotate: false
+  xy: 804, 1406
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00002
+  rotate: true
+  xy: 2, 604
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00003
+  rotate: false
+  xy: 2, 2
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00004
+  rotate: true
+  xy: 604, 604
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00005
+  rotate: false
+  xy: 804, 2
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00006
+  rotate: true
+  xy: 1206, 604
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+chhu_02
+  rotate: true
+  xy: 1885, 1726
+  size: 280, 81
+  orig: 280, 81
+  offset: 0, 0
+  index: -1
+chhui
+  rotate: false
+  xy: 1606, 1845
+  size: 277, 161
+  orig: 277, 161
+  offset: 0, 0
+  index: -1
+
+skeleton2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+b/b_00007
+  rotate: false
+  xy: 2, 1406
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00008
+  rotate: false
+  xy: 804, 1406
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00009
+  rotate: true
+  xy: 2, 604
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00010
+  rotate: false
+  xy: 2, 2
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00011
+  rotate: true
+  xy: 604, 604
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00012
+  rotate: false
+  xy: 804, 2
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00013
+  rotate: true
+  xy: 1206, 604
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+
+skeleton3.png
+size: 1024,1024
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+b/b_00014
+  rotate: false
+  xy: 2, 2
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1
+b/b_00015
+  rotate: false
+  xy: 2, 2
+  size: 800, 600
+  orig: 800, 600
+  offset: 0, 0
+  index: -1

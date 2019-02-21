@@ -120,6 +120,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e738b76b9316985438a59a9cb68a9aa3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cdImg: {fileID: 114309544677683984}
+  spArr:
+  - {fileID: 21300000, guid: e39447981b196d94bad0328aed9e3a6d, type: 3}
+  - {fileID: 21300000, guid: 7cd280e847ee6b54687102ff1bb279b6, type: 3}
+  - {fileID: 21300000, guid: a28b726febdd035468b3fe645f236ce8, type: 3}
+  - {fileID: 21300000, guid: 3acbb45e6e4241f4eb0ba64dce760589, type: 3}
+  - {fileID: 21300000, guid: 38cf0f20080ae1d4e94e62e81ceaef17, type: 3}
+  - {fileID: 21300000, guid: 95238f8448aebae488869b0de676fe87, type: 3}
+  - {fileID: 21300000, guid: b09806252051ced4eae02f70053ce215, type: 3}
+  - {fileID: 21300000, guid: 3b9cac2b578d686409002db23e82b8e3, type: 3}
+  - {fileID: 21300000, guid: 055829911f2c55e44b1b587c95db3b8b, type: 3}
+  - {fileID: 21300000, guid: f03bee485a3286f41ae4aaec7fbac55d, type: 3}
+  - {fileID: 21300000, guid: f54742fd197f5874f993a13e524856e2, type: 3}
+  - {fileID: 21300000, guid: 7413860da38d2034f9bf954f405ff0d3, type: 3}
+  - {fileID: 21300000, guid: b536889030020c44ca80db8547193e13, type: 3}
 --- !u!222 &222828178494745722
 CanvasRenderer:
   m_ObjectHideFlags: 1

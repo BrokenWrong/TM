@@ -56,6 +56,16 @@ public class PlayUIs : MonoBehaviour {
     {
         SoundBtn.SetActive(!GameData.Instance().isHaveSound);
         SoundBtny.SetActive(GameData.Instance().isHaveSound);
+
+        // 声音点击
+        if (GameData.Instance().isHaveSound)
+        {
+            soundOs.PlayYing();
+        }
+        else
+        {
+            soundOs.Jinying();
+        }
     }
 
     public void AgainClick()

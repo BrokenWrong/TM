@@ -14,15 +14,26 @@ public class Plays : MonoBehaviour {
     // 当前已打开遮挡快
     private int openShelter = 0;
 
-    
+    public Scores scores;
+
+    public SoundOs soundOs;
 
     void Update()
     {
         MouseClick();
     }
 
+    private void PlayBattleSound()
+    {
+        int index = UnityEngine.Random.Range(13, 16);
+        soundOs.PlayBgSound(index);
+    }
+
     public void OnPlay()
     {
+        // 播放音乐
+        PlayBattleSound();
+
         openShelter = 0;
         bool bl = GameData.Instance().passCurr > GameData.Instance().passAdopt;
         for (int i = 0; i < FastImgs.Length; i++)
@@ -37,6 +48,9 @@ public class Plays : MonoBehaviour {
         BgImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
         str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "B";
         RoleImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
+
+        // 进战斗界面刷新分数显示
+        scores.Refresh(!bl);
     }
 
     public void AgainPlay()
@@ -54,6 +68,9 @@ public class Plays : MonoBehaviour {
         BgImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
         str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "B";
         RoleImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
+
+        // 重新开始刷新分数
+        scores.Init();
     }
 
     private void MouseClick()
@@ -88,6 +105,9 @@ public class Plays : MonoBehaviour {
         {
             GameData.Instance().SaveData();
             DisplayPlayUi();
+
+            // 通关隐藏分数
+            scores.SetScoresGroup(0);
         }
     }
 }

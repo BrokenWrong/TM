@@ -25,19 +25,33 @@ public class Passs : MonoBehaviour {
     public GameObject PinZi;
     public GameObject PinZiNot;
 
+    // 进关按钮
+    private Dictionary<int, CheckBtns> checkBtnsDict = new Dictionary<int, CheckBtns>();
+
     // 通关关数保留
-    private int passAdopt = 0;
+    private int passAdopt = -1;
+
+    // 瓶子动画
+    public GameObject PinziAnim;
 
     void Start () {
-        passAdopt = GameData.Instance().passAdopt;
+        //passAdopt = GameData.Instance().passAdopt;
         LoadPinZi();
-        LoadPinZiNot();
+        //LoadPinZiNot();
         LoadCheckBtn();
     }
 
     public void OnPass()
     {
         RefreshBtn();
+        //Invoke("RefreshPass", 0.5f);
+    }
+
+    // 刷新关卡显示
+    private void RefreshPass()
+    {
+        //PlayCheckAnim(GameData.Instance().spotCurr);
+        //PlayPinziAnim();
     }
 	
 	void Update () {
@@ -45,6 +59,10 @@ public class Passs : MonoBehaviour {
         {
             gameManagers.LoadBegin();
         }
+        //if (Input.GetKeyDown(KeyCode.K))
+        //{
+        //    PlayCheckAnim();
+        //}
     }
 
     private void LoadPinZi()
@@ -52,19 +70,28 @@ public class Passs : MonoBehaviour {
         if (GameData.Instance().passChooseSpot.Count == 0) return;
         for (int i = 0; i < GameData.Instance().passChooseSpot.Count; i++)
         {
-            Transform tf = Instantiate(PinZi, Check).transform;
+            if(passAdopt < i)
+            {
+                PlayPinziAnim(i);
+            }
+            else
+            {
+                CreatePinzi(i);
+            }
+            //CreatePinzi(i);
+            /*Transform tf = Instantiate(PinZi, Check).transform;
             tf.localPosition = pinZiVA[i];
-            tf.GetComponent<PinZis>().OnPinZi(transform, i + 1);
+            tf.GetComponent<PinZis>().OnPinZi(transform, i + 1);*/
         }
     }
 
-    private void LoadPinZiNot()
+    /*private void LoadPinZiNot()
     {
         if (GameData.Instance().passAdopt == GameData.Instance().passMax) return;
         Transform tf = Instantiate(PinZiNot, Check).transform;
         tf.localPosition = pinZiVA[GameData.Instance().passAdopt];
         tf.GetComponent<PinZiNots>().OnPinZi(transform, GameData.Instance().passAdopt + 1);
-    }
+    }*/
 
     private void LoadCheckBtn()
     {
@@ -75,13 +102,13 @@ public class Passs : MonoBehaviour {
                 Transform tf = Instantiate(CheckBtn, Check).transform;
                 tf.localPosition = checkVA[i];
                 tf.GetComponent<CheckBtns>().OnCheck(transform, i + 1);
+                checkBtnsDict[i] = tf.GetComponent<CheckBtns>();
             }
         }
     }
 
     public void CheckClick()
     {
-        soundOs.PlayBtnSound();
         gameManagers.OnPlay();
     }
 
@@ -94,15 +121,63 @@ public class Passs : MonoBehaviour {
     private void RefreshBtn()
     {
         soundOs.PlayBtnSound();
-        if (GameData.Instance().passAdopt == passAdopt) return;
+        //if (GameData.Instance().passAdopt == passAdopt) return;
         for (int i = 0; i < Check.childCount; i++)
         {
             Transform tf = Check.GetChild(i);
             Destroy(tf.gameObject);
         }
         LoadPinZi();
-        LoadPinZiNot();
+        //LoadPinZiNot();
         LoadCheckBtn();
-        passAdopt = GameData.Instance().passAdopt;
+        //passAdopt = GameData.Instance().passAdopt;
     }
+
+    // 播放选关点爆破动画
+    private void PlayCheckAnim(int index)
+    {
+        foreach (KeyValuePair<int, CheckBtns> item in checkBtnsDict)
+        {
+            if(item.Key == index)
+            {
+                item.Value.Play();
+                return;
+            }
+        }
+    }
+
+    // 播放瓶子出现动画
+    private void PlayPinziAnim(int i)
+    {
+        passAdopt = i;
+        Transform tf = Instantiate(PinziAnim, Check).transform;
+        Vector3 vec3 = pinZiVA[i];
+        Passs scripts = transform.GetComponent<Passs>();
+        tf.GetComponent<PinziAnims>().OnPinziAnim(vec3, scripts, i);
+    }
+
+    // 创建空瓶子出现动画
+    /*private void PlayPinziNotAnim()
+    {
+        Transform tf = Instantiate(PinziAnim, Check).transform;
+        Vector3 vec3 = pinZiVA[GameData.Instance().passCurr];
+        Passs scripts = transform.GetComponent<Passs>();
+        tf.GetComponent<PinziAnims>().OnPinziAnim(vec3, scripts, GameData.Instance().passCurr, 2);
+    }*/
+
+    // 创建瓶子
+    public void CreatePinzi(int i)
+    {
+        Transform tf = Instantiate(PinZi, Check).transform;
+        tf.localPosition = pinZiVA[i];
+        tf.GetComponent<PinZis>().OnPinZi(transform, i + 1);
+    }
+
+    // 创建空瓶子
+    /*public void CreatePinziNot()
+    {
+        Transform tf = Instantiate(PinZiNot, Check).transform;
+        tf.localPosition = pinZiVA[GameData.Instance().passAdopt];
+        tf.GetComponent<PinZiNots>().OnPinZi(transform, GameData.Instance().passAdopt + 1);
+    }*/
 }
