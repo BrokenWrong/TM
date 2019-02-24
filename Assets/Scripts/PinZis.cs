@@ -12,7 +12,7 @@ public class PinZis : MonoBehaviour {
     {
         passs = tf.GetComponent<Passs>();
         indexI = index;
-        Img1.sprite = Resources.Load("Textures/pass/A" + index.ToString(), typeof(Sprite)) as Sprite;
+        Img1.sprite = Resources.Load(GameData.Instance().GetPassStr(index - 1, "pinziImg"), typeof(Sprite)) as Sprite;
     }
 
     public void PinZiClick()

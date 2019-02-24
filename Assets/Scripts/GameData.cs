@@ -1,5 +1,7 @@
-﻿using System.Collections;
+﻿using LitJson;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using UnityEngine;
 
 public class GameData{
@@ -15,7 +17,7 @@ public class GameData{
     }
 
     // 关卡数
-    public int passMax = 10;
+    public int passMax = 8;
 
     // 已通关关卡数
     public int passAdopt = 0;
@@ -35,10 +37,19 @@ public class GameData{
     // 音乐
     public SoundOs soundOs;
 
+    // 初始数据
+    private JsonData initData;
+
+    // 关卡数据
+    private JsonData passData;
+
     // 初始化
     private void Init()
     {
         GetSaveFileData();
+        ReadInitData();
+        ReadPassData();
+        InitGameData();
         //AddPassChooseSpot(0);
         //AddPassChooseSpot(1);
         //AddPassChooseSpot(2);
@@ -65,6 +76,12 @@ public class GameData{
         {
             passChooseSpot.Add(int.Parse(passChooseSpotA[i]));
         }
+    }
+
+    // 初始化数据
+    private void InitGameData()
+    {
+        passMax = int.Parse(initData["passMax"].ToString());
     }
 
     // 保存存档
@@ -123,5 +140,34 @@ public class GameData{
         AddPassChooseSpot(spotCurr);
         passAdopt++;
         SaveFileData();
+    }
+
+    // initData
+    private void ReadInitData()
+    {
+        StreamReader streamreader = new StreamReader(Application.dataPath + "/Resources/Config/InitData.json");
+        JsonReader js = new JsonReader(streamreader);
+        initData = JsonMapper.ToObject<JsonData>(js);
+    }
+
+    // passData
+    private void ReadPassData()
+    {
+        StreamReader streamreader = new StreamReader(Application.dataPath + "/Resources/Config/PassData.json");
+        JsonReader js = new JsonReader(streamreader);
+        passData = JsonMapper.ToObject<JsonData>(js);
+    }
+    public Vector3 GetPinziPos(int index)
+    {
+        string[] strArr = passData[index]["pinziPos"].ToString().Split(',');
+        return new Vector3(float.Parse(strArr[0]), float.Parse(strArr[1]), 0);
+    }
+    public string GetPassStr(int index, string name)
+    {
+        return passData[index][name].ToString();
+    }
+    public string GetCurrPassStr(string name)
+    {
+        return passData[passCurr - 1][name].ToString();
     }
 }

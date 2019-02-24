@@ -11,15 +11,15 @@ public class Passs : MonoBehaviour {
         new Vector3(-630, -70, 0), new Vector3(-581, -370, 0), new Vector3(-279, -65, 0),
         new Vector3(11, -88, 0), new Vector3(42, 259, 0), new Vector3(108, -335, 0),
         new Vector3(436, 366, 0), new Vector3(716, 148, 0), new Vector3(695, -195, 0),
-        new Vector3(472, -437, 0),
+        new Vector3(472, -437, 0), new Vector3(301, 119, 0), new Vector3(387, -157, 0)
     };
-    private Vector3[] pinZiVA =
-    {
-        new Vector3(-794, 327, 0), new Vector3(-661, 190, 0), new Vector3(-526, 290, 0),
-        new Vector3(-364, 207, 0), new Vector3(-213, 307, 0), new Vector3(-67, 207, 0),
-        new Vector3(74, 307, 0), new Vector3(211, 207, 0), new Vector3(352, 307, 0),
-        new Vector3(498, 207, 0),
-    };
+    //private Vector3[] pinZiVA =
+    //{
+    //    new Vector3(-794, 327, 0), new Vector3(-661, 190, 0), new Vector3(-526, 290, 0),
+    //    new Vector3(-364, 207, 0), new Vector3(-213, 307, 0), new Vector3(-67, 207, 0),
+    //    new Vector3(74, 307, 0), new Vector3(211, 207, 0), new Vector3(352, 307, 0),
+    //    new Vector3(498, 207, 0),// 647, 307      789, 216
+    //};
     public GameObject CheckBtn;
     public Transform Check;
     public GameObject PinZi;
@@ -95,7 +95,7 @@ public class Passs : MonoBehaviour {
 
     private void LoadCheckBtn()
     {
-        for (int i = 0; i < checkVA.Length; i++)
+        for (int i = 0; i < GameData.Instance().passMax; i++)
         {
             if(!GameData.Instance().IsPassChooseSpot(i))
             {
@@ -151,7 +151,7 @@ public class Passs : MonoBehaviour {
     {
         passAdopt = i;
         Transform tf = Instantiate(PinziAnim, Check).transform;
-        Vector3 vec3 = pinZiVA[i];
+        Vector3 vec3 = GameData.Instance().GetPinziPos(i);
         Passs scripts = transform.GetComponent<Passs>();
         tf.GetComponent<PinziAnims>().OnPinziAnim(vec3, scripts, i);
     }
@@ -169,7 +169,7 @@ public class Passs : MonoBehaviour {
     public void CreatePinzi(int i)
     {
         Transform tf = Instantiate(PinZi, Check).transform;
-        tf.localPosition = pinZiVA[i];
+        tf.localPosition = GameData.Instance().GetPinziPos(i);
         tf.GetComponent<PinZis>().OnPinZi(transform, i + 1);
     }
 

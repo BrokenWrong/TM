@@ -44,9 +44,9 @@ public class Plays : MonoBehaviour {
         isUiEnabled = !bl;
         playUIs.SetCanvasGroup(!bl);
 
-        string str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "A";
+        string str = GameData.Instance().GetCurrPassStr("bgImg");
         BgImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
-        str = "Textures/roles/" + GameData.Instance().passCurr.ToString() + "B";
+        str = GameData.Instance().GetCurrPassStr("roleImg");
         RoleImg.sprite = Resources.Load(str, typeof(Sprite)) as Sprite;
 
         // 进战斗界面刷新分数显示
