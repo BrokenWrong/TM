@@ -1,0 +1,17 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 05emo_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: a1d2b0cb6df81974888a37679e540bbd, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 3b0db56dff017df4bb3040beacd73534, type: 2}
+  - {fileID: 2100000, guid: 96def09d15310a943b6faf8746c2f79e, type: 2}

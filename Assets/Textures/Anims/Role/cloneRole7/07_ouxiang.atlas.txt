@@ -1,0 +1,166 @@
+
+07_ouxiang.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TUTU
+  rotate: true
+  xy: 2072, 146
+  size: 253, 383
+  orig: 253, 383
+  offset: 0, 0
+  index: -1
+bg
+  rotate: false
+  xy: 2, 401
+  size: 2896, 1630
+  orig: 2896, 1630
+  offset: 0, 0
+  index: -1
+biaoqing
+  rotate: true
+  xy: 3093, 8
+  size: 169, 170
+  orig: 169, 170
+  offset: 0, 0
+  index: -1
+biaoqing2
+  rotate: false
+  xy: 3889, 229
+  size: 166, 179
+  orig: 166, 179
+  offset: 0, 0
+  index: -1
+fahou
+  rotate: true
+  xy: 2457, 119
+  size: 280, 353
+  orig: 280, 353
+  offset: 0, 0
+  index: -1
+faqian
+  rotate: false
+  xy: 922, 43
+  size: 372, 356
+  orig: 372, 356
+  offset: 0, 0
+  index: -1
+fayinying
+  rotate: false
+  xy: 3644, 192
+  size: 243, 216
+  orig: 243, 216
+  offset: 0, 0
+  index: -1
+hautong
+  rotate: true
+  xy: 2, 52
+  size: 347, 918
+  orig: 347, 918
+  offset: 0, 0
+  index: -1
+kou
+  rotate: false
+  xy: 1528, 66
+  size: 51, 46
+  orig: 51, 46
+  offset: 0, 0
+  index: -1
+nai
+  rotate: true
+  xy: 2812, 104
+  size: 295, 279
+  orig: 295, 279
+  offset: 0, 0
+  index: -1
+setou
+  rotate: false
+  xy: 1426, 36
+  size: 100, 76
+  orig: 100, 76
+  offset: 0, 0
+  index: -1
+shou
+  rotate: false
+  xy: 3265, 47
+  size: 97, 130
+  orig: 97, 130
+  offset: 0, 0
+  index: -1
+sidai
+  rotate: false
+  xy: 3093, 179
+  size: 280, 229
+  orig: 280, 229
+  offset: 0, 0
+  index: -1
+tou
+  rotate: true
+  xy: 3375, 187
+  size: 221, 267
+  orig: 221, 267
+  offset: 0, 0
+  index: -1
+yanbai
+  rotate: false
+  xy: 1296, 25
+  size: 128, 87
+  orig: 128, 87
+  offset: 0, 0
+  index: -1
+yanqiu
+  rotate: false
+  xy: 2, 2
+  size: 107, 48
+  orig: 107, 48
+  offset: 0, 0
+  index: -1
+yinying
+  rotate: true
+  xy: 2900, 410
+  size: 1621, 1192
+  orig: 1621, 1192
+  offset: 0, 0
+  index: -1
+youbi
+  rotate: false
+  xy: 1296, 114
+  size: 405, 285
+  orig: 405, 285
+  offset: 0, 0
+  index: -1
+zuobi
+  rotate: true
+  xy: 1703, 125
+  size: 274, 367
+  orig: 274, 367
+  offset: 0, 0
+  index: -1
+
+07_ouxiang2.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg2
+  rotate: false
+  xy: 2, 215
+  size: 2896, 1519
+  orig: 2896, 1519
+  offset: 0, 0
+  index: -1
+jiao
+  rotate: false
+  xy: 2900, 2
+  size: 687, 603
+  orig: 687, 603
+  offset: 0, 0
+  index: -1
+shen
+  rotate: false
+  xy: 2900, 607
+  size: 783, 1127
+  orig: 783, 1127
+  offset: 0, 0
+  index: -1

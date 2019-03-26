@@ -1,0 +1,200 @@
+
+2_saibo.png
+size: 3928,2420
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG
+  rotate: false
+  xy: 2, 160
+  size: 3842, 2258
+  orig: 3842, 2258
+  offset: 0, 0
+  index: -1
+biyan
+  rotate: false
+  xy: 2, 2
+  size: 330, 156
+  orig: 330, 156
+  offset: 0, 0
+  index: -1
+erduo
+  rotate: true
+  xy: 334, 10
+  size: 97, 124
+  orig: 97, 124
+  offset: 0, 0
+  index: -1
+yanbai
+  rotate: false
+  xy: 334, 109
+  size: 256, 49
+  orig: 256, 49
+  offset: 0, 0
+  index: -1
+yanqiu
+  rotate: true
+  xy: 3846, 2189
+  size: 229, 80
+  orig: 229, 80
+  offset: 0, 0
+  index: -1
+zui
+  rotate: false
+  xy: 460, 14
+  size: 108, 93
+  orig: 108, 93
+  offset: 0, 0
+  index: -1
+
+2_saibo2.png
+size: 3980,2444
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+TUTU
+  rotate: true
+  xy: 3193, 1380
+  size: 506, 765
+  orig: 506, 765
+  offset: 0, 0
+  index: -1
+gebo2
+  rotate: false
+  xy: 2983, 667
+  size: 678, 711
+  orig: 678, 711
+  offset: 0, 0
+  index: -1
+nai1
+  rotate: true
+  xy: 1024, 2
+  size: 392, 378
+  orig: 392, 378
+  offset: 0, 0
+  index: -1
+nai2
+  rotate: true
+  xy: 2983, 1569
+  size: 317, 203
+  orig: 317, 203
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 1555, 663
+  size: 1426, 1776
+  orig: 1426, 1776
+  offset: 0, 0
+  index: -1
+tou
+  rotate: true
+  xy: 3193, 36
+  size: 429, 494
+  orig: 429, 494
+  offset: 0, 0
+  index: -1
+toufa2
+  rotate: true
+  xy: 2983, 1888
+  size: 551, 993
+  orig: 551, 993
+  offset: 0, 0
+  index: -1
+tpufa1
+  rotate: false
+  xy: 2, 191
+  size: 1020, 2248
+  orig: 1020, 2248
+  offset: 0, 0
+  index: -1
+xian1
+  rotate: false
+  xy: 1602, 47
+  size: 1068, 614
+  orig: 1068, 614
+  offset: 0, 0
+  index: -1
+xian2
+  rotate: true
+  xy: 1024, 396
+  size: 2043, 529
+  orig: 2043, 529
+  offset: 0, 0
+  index: -1
+xian4
+  rotate: false
+  xy: 3663, 467
+  size: 281, 911
+  orig: 281, 911
+  offset: 0, 0
+  index: -1
+yanjing
+  rotate: true
+  xy: 1404, 28
+  size: 366, 196
+  orig: 366, 196
+  offset: 0, 0
+  index: -1
+yinying
+  rotate: false
+  xy: 2672, 84
+  size: 519, 577
+  orig: 519, 577
+  offset: 0, 0
+  index: -1
+
+2_saibo3.png
+size: 3848,1872
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gebo1
+  rotate: false
+  xy: 2, 558
+  size: 1204, 1311
+  orig: 1204, 1311
+  offset: 0, 0
+  index: -1
+gebo3
+  rotate: false
+  xy: 3167, 301
+  size: 678, 711
+  orig: 678, 711
+  offset: 0, 0
+  index: -1
+liuhai
+  rotate: true
+  xy: 1542, 60
+  size: 558, 671
+  orig: 558, 671
+  offset: 0, 0
+  index: -1
+tu1
+  rotate: false
+  xy: 2430, 1014
+  size: 1130, 855
+  orig: 1130, 855
+  offset: 0, 0
+  index: -1
+tui2
+  rotate: true
+  xy: 1208, 620
+  size: 1249, 1220
+  orig: 1249, 1220
+  offset: 0, 0
+  index: -1
+xian3
+  rotate: true
+  xy: 2, 2
+  size: 554, 1538
+  orig: 554, 1538
+  offset: 0, 0
+  index: -1
+xian5
+  rotate: false
+  xy: 2430, 95
+  size: 735, 917
+  orig: 735, 917
+  offset: 0, 0
+  index: -1

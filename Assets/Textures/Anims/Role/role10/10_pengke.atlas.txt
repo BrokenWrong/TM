@@ -1,0 +1,144 @@
+
+10_pengke.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg
+  rotate: false
+  xy: 2, 621
+  size: 2505, 1410
+  orig: 2505, 1410
+  offset: 0, 0
+  index: -1
+che2
+  rotate: true
+  xy: 891, 44
+  size: 575, 820
+  orig: 575, 820
+  offset: 0, 0
+  index: -1
+lian
+  rotate: false
+  xy: 3810, 334
+  size: 276, 280
+  orig: 276, 280
+  offset: 0, 0
+  index: -1
+liuhai
+  rotate: true
+  xy: 1713, 212
+  size: 407, 464
+  orig: 407, 464
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: true
+  xy: 2509, 904
+  size: 1127, 811
+  orig: 1127, 811
+  offset: 0, 0
+  index: -1
+toufa
+  rotate: true
+  xy: 3322, 1086
+  size: 945, 690
+  orig: 945, 690
+  offset: 0, 0
+  index: -1
+yanbai
+  rotate: false
+  xy: 3322, 1024
+  size: 173, 60
+  orig: 173, 60
+  offset: 0, 0
+  index: -1
+yanqiu
+  rotate: false
+  xy: 3497, 1024
+  size: 151, 60
+  orig: 151, 60
+  offset: 0, 0
+  index: -1
+youshou
+  rotate: true
+  xy: 3542, 616
+  size: 406, 403
+  orig: 406, 403
+  offset: 0, 0
+  index: -1
+youtui
+  rotate: false
+  xy: 2509, 160
+  size: 1031, 742
+  orig: 1031, 742
+  offset: 0, 0
+  index: -1
+zounai
+  rotate: false
+  xy: 3810, 27
+  size: 241, 305
+  orig: 241, 305
+  offset: 0, 0
+  index: -1
+zoutui
+  rotate: true
+  xy: 2, 2
+  size: 617, 887
+  orig: 617, 887
+  offset: 0, 0
+  index: -1
+zuoishou
+  rotate: false
+  xy: 2179, 55
+  size: 317, 564
+  orig: 317, 564
+  offset: 0, 0
+  index: -1
+zuoishou2
+  rotate: false
+  xy: 3542, 61
+  size: 266, 553
+  orig: 266, 553
+  offset: 0, 0
+  index: -1
+
+10_pengke2.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+che1
+  rotate: false
+  xy: 2, 384
+  size: 2366, 1410
+  orig: 2366, 1410
+  offset: 0, 0
+  index: -1
+younai
+  rotate: false
+  xy: 2370, 1483
+  size: 289, 311
+  orig: 289, 311
+  offset: 0, 0
+  index: -1
+youshou2
+  rotate: false
+  xy: 2, 2
+  size: 243, 380
+  orig: 243, 380
+  offset: 0, 0
+  index: -1
+
+10_pengke3.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+che
+  rotate: false
+  xy: 2, 2
+  size: 2126, 1113
+  orig: 2126, 1113
+  offset: 0, 0
+  index: -1

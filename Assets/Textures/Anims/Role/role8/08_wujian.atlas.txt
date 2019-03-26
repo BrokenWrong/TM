@@ -1,0 +1,152 @@
+
+08_wujian.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG1
+  rotate: true
+  xy: 2, 115
+  size: 1921, 1245
+  orig: 1921, 1245
+  offset: 0, 0
+  index: -1
+BG2
+  rotate: true
+  xy: 3532, 1509
+  size: 527, 543
+  orig: 527, 543
+  offset: 0, 0
+  index: -1
+biaoqing
+  rotate: true
+  xy: 3905, 748
+  size: 227, 181
+  orig: 227, 181
+  offset: 0, 0
+  index: -1
+biaoqing2
+  rotate: true
+  xy: 3905, 977
+  size: 228, 181
+  orig: 228, 181
+  offset: 0, 0
+  index: -1
+bozi
+  rotate: true
+  xy: 2, 2
+  size: 111, 229
+  orig: 111, 229
+  offset: 0, 0
+  index: -1
+faqian
+  rotate: true
+  xy: 1249, 3
+  size: 986, 793
+  orig: 986, 793
+  offset: 0, 0
+  index: -1
+gangsai
+  rotate: true
+  xy: 3905, 1207
+  size: 300, 186
+  orig: 300, 186
+  offset: 0, 0
+  index: -1
+lian
+  rotate: true
+  xy: 3532, 1226
+  size: 281, 312
+  orig: 281, 312
+  offset: 0, 0
+  index: -1
+mao2
+  rotate: false
+  xy: 1249, 991
+  size: 2281, 1045
+  orig: 2281, 1045
+  offset: 0, 0
+  index: -1
+shen
+  rotate: false
+  xy: 3218, 19
+  size: 685, 970
+  orig: 685, 970
+  offset: 0, 0
+  index: -1
+tui
+  rotate: false
+  xy: 2044, 10
+  size: 1172, 979
+  orig: 1172, 979
+  offset: 0, 0
+  index: -1
+tui2
+  rotate: false
+  xy: 3905, 309
+  size: 149, 437
+  orig: 149, 437
+  offset: 0, 0
+  index: -1
+yanbai
+  rotate: false
+  xy: 402, 56
+  size: 198, 57
+  orig: 198, 57
+  offset: 0, 0
+  index: -1
+yanqiu
+  rotate: false
+  xy: 233, 45
+  size: 167, 68
+  orig: 167, 68
+  offset: 0, 0
+  index: -1
+
+08_wujian2.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+chibang
+  rotate: false
+  xy: 2, 686
+  size: 2105, 1245
+  orig: 2105, 1245
+  offset: 0, 0
+  index: -1
+fahou
+  rotate: false
+  xy: 2, 2
+  size: 774, 682
+  orig: 774, 682
+  offset: 0, 0
+  index: -1
+kuzi
+  rotate: false
+  xy: 2109, 972
+  size: 1140, 959
+  orig: 1140, 959
+  offset: 0, 0
+  index: -1
+mao1
+  rotate: true
+  xy: 3251, 777
+  size: 1154, 825
+  orig: 1154, 825
+  offset: 0, 0
+  index: -1
+youbirr
+  rotate: false
+  xy: 778, 271
+  size: 769, 413
+  orig: 769, 413
+  offset: 0, 0
+  index: -1
+zuobi
+  rotate: false
+  xy: 2109, 815
+  size: 770, 155
+  orig: 770, 155
+  offset: 0, 0
+  index: -1

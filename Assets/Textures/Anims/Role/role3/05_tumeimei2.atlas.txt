@@ -1,0 +1,118 @@
+
+05_tumeimei2.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+images/bg
+  rotate: false
+  xy: 2, 750
+  size: 1924, 1209
+  orig: 1924, 1209
+  offset: 0, 0
+  index: -1
+images/bianzi
+  rotate: false
+  xy: 1928, 1014
+  size: 1055, 945
+  orig: 1055, 945
+  offset: 0, 0
+  index: -1
+images/biaoqing1
+  rotate: false
+  xy: 3469, 928
+  size: 237, 196
+  orig: 237, 196
+  offset: 0, 0
+  index: -1
+images/biaoqing2
+  rotate: true
+  xy: 2757, 774
+  size: 238, 196
+  orig: 238, 196
+  offset: 0, 0
+  index: -1
+images/er
+  rotate: false
+  xy: 1218, 297
+  size: 514, 451
+  orig: 514, 451
+  offset: 0, 0
+  index: -1
+images/geboou
+  rotate: false
+  xy: 2985, 1340
+  size: 474, 619
+  orig: 474, 619
+  offset: 0, 0
+  index: -1
+images/gebozuo
+  rotate: true
+  xy: 1218, 2
+  size: 293, 485
+  orig: 293, 485
+  offset: 0, 0
+  index: -1
+images/gebozuo2
+  rotate: true
+  xy: 1928, 719
+  size: 293, 485
+  orig: 293, 485
+  offset: 0, 0
+  index: -1
+images/luhai
+  rotate: true
+  xy: 2985, 928
+  size: 410, 482
+  orig: 410, 482
+  offset: 0, 0
+  index: -1
+images/naiyou
+  rotate: false
+  xy: 3849, 1655
+  size: 201, 304
+  orig: 201, 304
+  offset: 0, 0
+  index: -1
+images/naizuo
+  rotate: true
+  xy: 2415, 747
+  size: 265, 340
+  orig: 265, 340
+  offset: 0, 0
+  index: -1
+images/shen
+  rotate: false
+  xy: 2, 29
+  size: 1214, 719
+  orig: 1214, 719
+  offset: 0, 0
+  index: -1
+images/tou
+  rotate: false
+  xy: 3469, 1126
+  size: 279, 307
+  orig: 279, 307
+  offset: 0, 0
+  index: -1
+images/toufa
+  rotate: false
+  xy: 3461, 1435
+  size: 386, 524
+  orig: 386, 524
+  offset: 0, 0
+  index: -1
+images/yanbai
+  rotate: false
+  xy: 1734, 627
+  size: 189, 121
+  orig: 189, 121
+  offset: 0, 0
+  index: -1
+images/yanqiu
+  rotate: false
+  xy: 3849, 1535
+  size: 174, 118
+  orig: 174, 118
+  offset: 0, 0
+  index: -1

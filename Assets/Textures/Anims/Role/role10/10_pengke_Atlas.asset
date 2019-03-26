@@ -1,0 +1,18 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 10_pengke_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 762bc5b7271a19840923269581da688d, type: 3}
+  materials:
+  - {fileID: 2100000, guid: fa1d9040fb5f4bf45ad29a3c516832af, type: 2}
+  - {fileID: 2100000, guid: f4b38e593ae2bfc4998bb38bb5d62dad, type: 2}
+  - {fileID: 2100000, guid: 5983048c0ad0a8f4cb8302d84c5e9e1c, type: 2}

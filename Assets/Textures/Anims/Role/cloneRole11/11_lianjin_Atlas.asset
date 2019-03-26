@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6b194f808b1af6499c93410e504af42, type: 3}
+  m_Name: 11_lianjin_Atlas
+  m_EditorClassIdentifier: 
+  atlasFile: {fileID: 4900000, guid: 100d809a07587f541ab002cad807a858, type: 3}
+  materials:
+  - {fileID: 2100000, guid: 5a8cf370314600940b4f1d8c3b962c88, type: 2}
+  - {fileID: 2100000, guid: 95616e2ef2f4c7942a3a3e634b942ed3, type: 2}
+  - {fileID: 2100000, guid: a032e50140d59b94698eee34dfd71201, type: 2}
+  - {fileID: 2100000, guid: 8eace2ea8b3b55e4fa21c501b55dd081, type: 2}
+  - {fileID: 2100000, guid: 641f324ff688b5f4cb352358324d32dd, type: 2}
+  - {fileID: 2100000, guid: 2e7e78491e12d8c4a8c75eb13f10066c, type: 2}

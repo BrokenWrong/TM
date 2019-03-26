@@ -1,0 +1,103 @@
+
+09_gongzhu.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+bg01
+  rotate: true
+  xy: 2, 125
+  size: 1921, 1133
+  orig: 1921, 1133
+  offset: 0, 0
+  index: -1
+biaoqing10
+  rotate: false
+  xy: 3336, 153
+  size: 250, 291
+  orig: 250, 291
+  offset: 0, 0
+  index: -1
+biaoqing13
+  rotate: false
+  xy: 2, 2
+  size: 59, 121
+  orig: 59, 121
+  offset: 0, 0
+  index: -1
+lian07
+  rotate: false
+  xy: 2999, 446
+  size: 395, 396
+  orig: 395, 396
+  offset: 0, 0
+  index: -1
+liuhai11
+  rotate: true
+  xy: 2999, 43
+  size: 401, 335
+  orig: 401, 335
+  offset: 0, 0
+  index: -1
+toufahou03
+  rotate: true
+  xy: 2246, 844
+  size: 1202, 1107
+  orig: 1202, 1107
+  offset: 0, 0
+  index: -1
+tui202
+  rotate: true
+  xy: 1137, 212
+  size: 463, 784
+  orig: 463, 784
+  offset: 0, 0
+  index: -1
+yanbai08
+  rotate: false
+  xy: 1137, 36
+  size: 162, 174
+  orig: 162, 174
+  offset: 0, 0
+  index: -1
+yanqiu09
+  rotate: false
+  xy: 1301, 48
+  size: 152, 162
+  orig: 152, 162
+  offset: 0, 0
+  index: -1
+youbi04
+  rotate: true
+  xy: 2604, 103
+  size: 739, 393
+  orig: 739, 393
+  offset: 0, 0
+  index: -1
+youbi12
+  rotate: false
+  xy: 1923, 183
+  size: 679, 492
+  orig: 679, 492
+  offset: 0, 0
+  index: -1
+zuotui06
+  rotate: true
+  xy: 1137, 677
+  size: 1369, 1107
+  orig: 1369, 1107
+  offset: 0, 0
+  index: -1
+
+09_gongzhu2.png
+size: 2048,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+shenti05
+  rotate: false
+  xy: 2, 2
+  size: 1122, 1115
+  orig: 1122, 1115
+  offset: 0, 0
+  index: -1

@@ -1,50 +1,154 @@
 [
     {
-        "pinziPos": "-661,190,0",
+        "pinziPos": "-794,777.1,0",
+        "pinziImg": "Textures/roleimg/role1/pz",
+        "bgImg": "Textures/roleimg/role1/bg",
+        "roleImg": "Textures/roleimg/role1/role",
+        "role3Img": "Textures/roleimg/role1/role3",
+        "cothesImg": "Textures/roleimg/role1/role2",
+        "roleAnim": "Anims/CloneRoleAnim1",
+        "ach": "-1",
+        "pzSound": "Sounds/Pinzi/pz1",
+        "roleClip": "Sounds/Game/01",
+        "JisuiRSound": "Sounds/Role/r1",
+        "dtSound": "Sounds/Dongtu/dt1"
+    },
+    {
+        "pinziPos": "-661,640.1,0",
         "pinziImg": "Textures/roleimg/role2/pz",
         "bgImg": "Textures/roleimg/role2/bg",
-        "roleImg": "Textures/roleimg/role2/role"
+        "roleImg": "Textures/roleimg/role2/role",
+        "roleAnim": "Anims/CloneRoleAnim2",
+        "ach": "ACH_1",
+        "pzSound": "Sounds/Pinzi/pz2",
+        "roleClip": "Sounds/Game/02",
+        "JisuiRSound": "Sounds/Role/r2",
+        "dtSound": "Sounds/Dongtu/dt2"
     },
     {
-        "pinziPos": "-212,307,0",
+        "pinziPos": "-526,740.1,0",
+        "pinziImg": "Textures/roleimg/role3/pz",
+        "bgImg": "Textures/roleimg/role3/bg",
+        "roleImg": "Textures/roleimg/role3/role",
+        "role3Img": "Textures/roleimg/role3/role3",
+        "cothesImg": "Textures/roleimg/role3/role2",
+        "roleAnim": "Anims/CloneRoleAnim3",
+        "ach": "-1",
+        "pzSound": "Sounds/Pinzi/pz3",
+        "roleClip": "Sounds/Game/03",
+        "JisuiRSound": "Sounds/Role/r3",
+        "dtSound": "Sounds/Dongtu/dt3"
+    },
+    {
+        "pinziPos": "-364,657.1,0",
+        "pinziImg": "Textures/roleimg/role4/pz",
+        "bgImg": "Textures/roleimg/role4/bg",
+        "roleImg": "Textures/roleimg/role4/role",
+        "role3Img": "Textures/roleimg/role4/role3",
+        "cothesImg": "Textures/roleimg/role4/role2",
+        "roleAnim": "Anims/CloneRoleAnim4",
+        "ach": "-1",
+        "pzSound": "Sounds/Pinzi/pz4",
+        "roleClip": "Sounds/Game/04",
+        "JisuiRSound": "Sounds/Role/r4",
+        "dtSound": "Sounds/Dongtu/dt4"
+    },
+    {
+        "pinziPos": "-212,757.1,0",
         "pinziImg": "Textures/roleimg/role5/pz",
         "bgImg": "Textures/roleimg/role5/bg",
-        "roleImg": "Textures/roleimg/role5/role"
+        "roleImg": "Textures/roleimg/role5/role",
+        "roleAnim": "Anims/CloneRoleAnim5",
+        "ach": "ACH_2",
+        "pzSound": "Sounds/Pinzi/pz5",
+        "roleClip": "Sounds/Game/05",
+        "JisuiRSound": "Sounds/Role/r5",
+        "dtSound": "Sounds/Dongtu/dt5"
     },
     {
-        "pinziPos": "-67,207,0",
+        "pinziPos": "-67,657.1,0",
         "pinziImg": "Textures/roleimg/role6/pz",
         "bgImg": "Textures/roleimg/role6/bg",
-        "roleImg": "Textures/roleimg/role6/role"
+        "roleImg": "Textures/roleimg/role6/role",
+        "roleAnim": "Anims/CloneRoleAnim6",
+        "ach": "ACH_3",
+        "pzSound": "Sounds/Pinzi/pz6",
+        "roleClip": "Sounds/Game/06",
+        "JisuiRSound": "Sounds/Role/r6",
+        "dtSound": "Sounds/Dongtu/dt6"
     },
     {
-        "pinziPos": "74,307,0",
+        "pinziPos": "74,757.1,0",
         "pinziImg": "Textures/roleimg/role7/pz",
         "bgImg": "Textures/roleimg/role7/bg",
-        "roleImg": "Textures/roleimg/role7/role"
+        "roleImg": "Textures/roleimg/role7/role",
+        "roleAnim": "Anims/CloneRoleAnim7",
+        "ach": "ACH_4",
+        "pzSound": "Sounds/Pinzi/pz7",
+        "roleClip": "Sounds/Game/07",
+        "JisuiRSound": "Sounds/Role/r7",
+        "dtSound": "Sounds/Dongtu/dt7"
     },
     {
-        "pinziPos": "211,207,0",
+        "pinziPos": "211,657.1,0",
         "pinziImg": "Textures/roleimg/role8/pz",
         "bgImg": "Textures/roleimg/role8/bg",
-        "roleImg": "Textures/roleimg/role8/role"
+        "roleImg": "Textures/roleimg/role8/role",
+        "roleAnim": "Anims/CloneRoleAnim8",
+        "ach": "ACH_5",
+        "pzSound": "Sounds/Pinzi/pz8",
+        "roleClip": "Sounds/Game/08",
+        "JisuiRSound": "Sounds/Role/r8",
+        "dtSound": "Sounds/Dongtu/dt8"
     },
     {
-        "pinziPos": "498,207,0",
+        "pinziPos": "352,757.1,0",
+        "pinziImg": "Textures/roleimg/role9/pz",
+        "bgImg": "Textures/roleimg/role9/bg",
+        "roleImg": "Textures/roleimg/role9/role",
+        "role3Img": "Textures/roleimg/role9/role3",
+        "cothesImg": "Textures/roleimg/role9/role2",
+        "roleAnim": "Anims/CloneRoleAnim9",
+        "ach": "-1",
+        "pzSound": "Sounds/Pinzi/pz9",
+        "roleClip": "Sounds/Game/09",
+        "JisuiRSound": "Sounds/Role/r9",
+        "dtSound": "Sounds/Dongtu/dt9"
+    },
+    {
+        "pinziPos": "498,657.1,0",
         "pinziImg": "Textures/roleimg/role10/pz",
         "bgImg": "Textures/roleimg/role10/bg",
-        "roleImg": "Textures/roleimg/role10/role"
+        "roleImg": "Textures/roleimg/role10/role",
+        "roleAnim": "Anims/CloneRoleAnim10",
+        "ach": "ACH_6",
+        "pzSound": "Sounds/Pinzi/pz10",
+        "roleClip": "Sounds/Game/10",
+        "JisuiRSound": "Sounds/Role/r10",
+        "dtSound": "Sounds/Dongtu/dt10"
     },
     {
-        "pinziPos": "647,307,0",
+        "pinziPos": "647,757.1,0",
         "pinziImg": "Textures/roleimg/role11/pz",
         "bgImg": "Textures/roleimg/role11/bg",
-        "roleImg": "Textures/roleimg/role11/role"
+        "roleImg": "Textures/roleimg/role11/role",
+        "roleAnim": "Anims/CloneRoleAnim11",
+        "ach": "ACH_7",
+        "pzSound": "Sounds/Pinzi/pz11",
+        "roleClip": "Sounds/Game/11",
+        "JisuiRSound": "Sounds/Role/r11",
+        "dtSound": "Sounds/Dongtu/dt11"
     },
     {
-        "pinziPos": "789,216,0",
+        "pinziPos": "789,666.1,0",
         "pinziImg": "Textures/roleimg/role12/pz",
         "bgImg": "Textures/roleimg/role12/bg",
-        "roleImg": "Textures/roleimg/role12/role"
+        "roleImg": "Textures/roleimg/role12/role",
+        "roleAnim": "Anims/CloneRoleAnim12",
+        "ach": "ACH_8",
+        "pzSound": "Sounds/Pinzi/pz12",
+        "roleClip": "Sounds/Game/12",
+        "JisuiRSound": "Sounds/Role/r12",
+        "dtSound": "Sounds/Dongtu/dt12"
     }
 ]

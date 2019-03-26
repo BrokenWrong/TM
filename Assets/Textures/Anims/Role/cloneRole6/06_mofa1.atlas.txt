@@ -1,0 +1,123 @@
+
+06_mofa1.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+BG1
+  rotate: true
+  xy: 2, 120
+  size: 1921, 1081
+  orig: 1921, 1081
+  offset: 0, 0
+  index: -1
+BG2
+  rotate: true
+  xy: 1085, 120
+  size: 1921, 1081
+  orig: 1921, 1081
+  offset: 0, 0
+  index: -1
+TUTU
+  rotate: true
+  xy: 3701, 1332
+  size: 253, 383
+  orig: 253, 383
+  offset: 0, 0
+  index: -1
+baiqing2
+  rotate: false
+  xy: 3701, 1037
+  size: 377, 293
+  orig: 377, 293
+  offset: 0, 0
+  index: -1
+biaoqing
+  rotate: false
+  xy: 2474, 396
+  size: 231, 270
+  orig: 231, 270
+  offset: 0, 0
+  index: -1
+gebo
+  rotate: true
+  xy: 3701, 172
+  size: 863, 304
+  orig: 863, 304
+  offset: 0, 0
+  index: -1
+liuhai
+  rotate: false
+  xy: 3701, 1587
+  size: 386, 454
+  orig: 386, 454
+  offset: 0, 0
+  index: -1
+shenti
+  rotate: false
+  xy: 2168, 668
+  size: 1531, 1373
+  orig: 1531, 1373
+  offset: 0, 0
+  index: -1
+xiongyou
+  rotate: true
+  xy: 2168, 210
+  size: 456, 304
+  orig: 456, 304
+  offset: 0, 0
+  index: -1
+xiongzuo
+  rotate: false
+  xy: 2360, 4
+  size: 283, 204
+  orig: 283, 204
+  offset: 0, 0
+  index: -1
+yanbai
+  rotate: true
+  xy: 2168, 42
+  size: 128, 190
+  orig: 128, 190
+  offset: 0, 0
+  index: -1
+yanyou
+  rotate: true
+  xy: 2, 2
+  size: 116, 165
+  orig: 116, 165
+  offset: 0, 0
+  index: -1
+
+06_mofa12.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+fazhang
+  rotate: false
+  xy: 2446, 906
+  size: 689, 736
+  orig: 689, 736
+  offset: 0, 0
+  index: -1
+shuye
+  rotate: false
+  xy: 2, 2
+  size: 2442, 1640
+  orig: 2442, 1640
+  offset: 0, 0
+  index: -1
+
+06_mofa13.png
+size: 4096,2048
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+toufahou
+  rotate: false
+  xy: 2, 2
+  size: 2606, 1331
+  orig: 2606, 1331
+  offset: 0, 0
+  index: -1
